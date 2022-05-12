@@ -1,0 +1,91 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{Point and Interval Estimation for a Single Sample}
+The sample mean and sample proportion are examples of point estimates.\\
+The purpose of a confidence interval is to provide a margin of error for the point estimate, to indicate how far off the true value it is likely to be.\\
+In general, a quantity calculated from data is called a statistic, and a statistic that is used to estimate an unknown constant, or parameter, is called a point estimator or point estimate.\\
+Statistics are often used to estimate parameters. \\
+A statistic that is used to estimate a parameter is called a \textbf{point estimate}.\\
+Random quantity $\hat{p} = X/n$, if $\xsim B(n,p)$
+\\
+The \textbf{bias} of an estimator is the difference between the mean of the estimator and the true value being estimated.\\
+It is important to note that the bias only describes the closeness of the mean of the estimator.\\
+Let $\theta$ be a parameter, $\hat \theta$ be an estimator of $\theta$.
+\begin{equation*}
+    \mbox{Bias} = \mu_{\hat{\theta}}-\theta
+\end{equation*}
+An estimator with bias of 0 is unbiased.\\\\
+\textbf{Variance} measures spread. A small variance is better.\\\\
+\textbf{Mean Squared Error} = variance + square of the bias.
+\begin{equation*}
+    MSE=(\mu_{\hat{\theta}}-\theta)^2+\sigma _{\hat{\theta}}^2 = \mbox{Mean of the square of the errors}
+\end{equation*}
+Many confidence interval = point estimate $\pm$ margin of error, where margin of error = (critical value)(standard error) and the critical value is the multiplier that gives the confidence level.\\
+\subsection{Confidence intervals for one population mean}
+Let \xotn be a large ($n>30$) random sample from a population with mean $\mu$ and standard deviation $\sigma$, so that $\xbar$ is approximately normal. Then a level $100(1-\alpha)\%$ confidence interval for $\mu$ is: 
+\begin{equation*}
+     \xbar \pm z_{\frac{\alpha}{2} , \sigma_{\xbar}}
+\end{equation*}
+When the value of $\sigma$ is unknown, $\sigmax$ can be replaced with sample standard deviation s.\\
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ z & CI \\ 
+ \hline
+ 1 & 68\% \\ 
+ 1.645 & 90\% \\ 
+ 1.96 & 95 \% \\
+ 2.58 & 99\% \\
+ 3 & 99.7\% \\
+ \hline
+\end{tabular}
+\end{center}
+e.g. $z_{0.5\alpha}=1.96$ and the estimated standard deviation is 5, then $0.5 = 1.96 \frac{5}{\sqrt{n}}$, n = 385.\\
+Note: always round n up!!\\
+\\
+The sample size n needed to construct a level $100(1-\alpha)\%$ confidence interval of width $\pm w$ is:
+\[
+n=\frac{Z_{\alpha / 2}^2\sigma^2}{w^2}
+\]
+
+
+\subsection{Confidence intervals for one population proportion}
+Let X be the number of success in n independent Bernoulli trails with success probability p, so that $Z\sim \mbox{Bin}(n,p)$, then a $100(1-\alpha)\%$ confidence interval for p is:
+\[\tilde{p}\pm z_{{\alpha}/{2}}\sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}
+\]
+If lower limit $<$0, replace with 0; if upper limit $>$1, replace with 1.\\
+\\
+Determine sample size:
+\[n=\frac{z_{\alphat}^2 \tilde{p}(1-\tilde{p})}{w^2}-4 \mbox{ if an estimate of } \tilde{p}\mbox{ is available}\]
+\[n=\frac{z_{\alphat}^2 }{4w^2}-4 \mbox{ if no estimate of } \tilde{p}\mbox{ is available}\]
+Traditional Method:\\
+Let $\phat$ be the proportion of success in a large number of independent Bernoulli trails with success probability p.
+The sample must contains at least 10 successes and 10 failures.\\
+\[\phat\pm z_{{\alpha}/{2}}\sqrt{\frac{\phat(1-\phat)}{n}}
+\]
+
+\subsection{Student's t distribution}
+t Distribution could be used when the sample size is small, and the population is approximately normal.\\
+Let \xotn be a small random sample ($n<30$) from a normal population with mean $\mu$.
+\[t=\frac{\xbar - \mu}{s/{\sqrt{n}}}\]
+has a \textbf{student's t distribution} with \textbf{n-1 degrees of freedom} (denoted by $t_{n-1}$)\\
+\\
+The probability density of t distribution is different for different degrees of freedom.The t curves are more spread out than standard normal distribution.
+When sample contains outlier, a reasonable way to proceed is to construct a boxplot or dotplot of the sample. If these plots do not reveal a strong asymmetry or any outliers, then in most cases the Student's t distribution will be reliable.\\
+\\
+Let \xotn be a small random sample from a normal population with mean $\mu$. \\
+Confidence interval for $\mu$ is:
+\[ \xbar \pm t_{n-1,\alphat}\frac{s}{\sqrt{n}} \]
+
+\subsection{Prediction intervals and tolerance intervals}
+A \textbf{prediction interval} is an interval that is likely to contain the value of an item sampled from a population at a future time.\\
+If the shape of the population differs much from the normal curve, the prediction interval may be misleading.\\
+The population needs to be normal.\\
+\\
+A \textbf{tolerance interval} is an interval that is likely to contain a specified proportion of the population.\\
+Let \xotn be a sample from a normal population. A tolerance interval for containing $100(1-\gamma)\%$ of the population with confidence $100(1-\gamma)\%$ us:
+\[
+\xbar \pm k_{n,\alpha,\gamma}s
+\]
+\end{document}

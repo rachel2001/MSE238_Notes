@@ -1,0 +1,71 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{Summarizing Bivariate Data}
+\subsection{Correlation}
+The \textbf{correlation coefficient} (denoted r) is a numerical measure of the strength of the linear relationship between two quantitative variables.\\
+Let($x_1,y_1$),...,($x_n,y_n$) represent n points on a scatter plot.
+\begin{equation*}
+    r = \frac{\displaystyle\sum_{i=1}^{n}{(x_i-\bar{x})(y_i-\bar{y})}}{\displaystyle\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2} \sqrt{\sum_{i=1}^{n}(y_i-\bar{y})^2}}, r\in(-1,1)
+\end{equation*}
+When calculated by hand:
+\begin{equation*}
+    r = \frac{\displaystyle\sum_{i=1}^{n}{x_i y_i-n\bar{xy}}}{\displaystyle\sqrt{\sum_{i=1}^{n} x_i^2-n\bar{x}^2 }\sqrt{\sum_{i=1}^{n}y_i ^2-n\bar{y}^2}}, r\in(-1,1)
+\end{equation*}
+Positive r indicate positive slope for the least-squares line.\\
+r measures only linear association.\\
+r close to 0: weak linear relationship.\\
+r = -1 or 1: all points on scatterplot lie exactly on a straight line(perfect linear relationship)\\
+r is undefined: points lie exactly on a horizontal or vertical line\\
+r = 0: x and y are uncorrelated\\
+r $\neq$ 0: x and y are correlated.\\
+When outliers present, r can be misleading.
+\\\\
+\textbf{Confounding} occurs when there is a third variable that is correlated with both of the variables of interest, resulting in a correlation between them.
+\\\\
+In controlled experiments, confounding can often be avoided by choosing values for factors in a way so that the factors are uncorrelated.
+
+\subsection{Least-squares line and Least-squares regression}
+
+The equation of the line:
+\begin{equation*}
+    y=\hat{\beta_0}+\hat{\beta_1 x}
+\end{equation*}\\
+$\hat{\beta_0}$ and $\hat{\beta_1 x}$ are called the \textbf{least-squares coefficients}.\\
+The variable x is the independent variable. y is the dependent variable.\\
+When there is linear pattern in the data, we fit a least-squares line to the data. 
+The least-squares line is the line that fits the data best.\\
+$    y=\hat{\beta_0}+\hat{\beta_1 x} $ is called the \textbf{fitted value}.
+\\\\
+\textbf{simple linear regression} model: Linear models with one independent variable.\\
+\textbf{multiple linear regression mode}l: Linear models with more than one independent variable.
+
+
+\subsection{Residuals}
+The \textbf{residual $e_i=y_i-\hat{y_i}$} is the vertical distance of ($x_i, y_i$) to the least-squares line.\\
+The \textbf{least-squares line} is defined to be the line which the sum of squared residuals is minimized:
+\begin{equation*}
+    \hat y - \bar y = r \frac{S_x}{S_y}(x-\bar x)
+\end{equation*}
+\textbf{influential point}: An outlier that makes a considerable difference to the least-squares line when removed\\
+\begin{equation*}
+\hat{\beta_1}=r\frac{S_y}{S_x}    
+\end{equation*}
+$r^2$ is the \textbf{coefficient of determination}, expresses the reduction as a proportion of the spread around $y = \bar{y}$\\
+Proportion of variance in y explained by regression is the interpretation of $r^2$.
+\\\\
+\textbf{Error sum of squares}:measures the overall spread around the least-squares line.
+\begin{equation*}
+    \sum_{i=1}^{n}{(y_i-\hat{y})^2}
+\end{equation*}
+\\\\
+\textbf{Total sum of squares}: measures the overall spread around the line $y=\bar{y}$.
+\begin{equation*}
+    \sum_{i=1}^{n}{(y_i-\bar{y})^2}
+\end{equation*}
+\textbf{Regression sum of squares}: measures the reduction in spread of points obtained by using the least-squares line rather than $y=\bar{y}$:
+\begin{equation*}
+   \sum_{i=1}^{n}{(y_i-\hat{y})^2} - \sum_{i=1}^{n}{(y_i-\bar{y})^2}
+\end{equation*}
+
+\end{document}

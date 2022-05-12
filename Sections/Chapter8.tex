@@ -1,0 +1,60 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{Multiple Linear Regression}
+
+\subsection*{Multiple Linear Regression}
+Multiple regression: apply simple linear regression to fit a linear model relating the value of a dependent variable y to the value of a single independent variable x.
+\begin{equation*}
+    y=\beta_0+\beta_1 x+\epsilon
+\end{equation*}
+Assume that we have a sample of n items and that each item we have measured a dependent dependent variable y and p independent variables $x_1,x_2$,…$x_p$,\\
+The $i^{t h}$ sampled item gives rise to the ordered set $(y_i,x_{1i}$,…$x_{pi})$\\
+Fit the \textbf{multiple regression model}
+\begin{equation*}
+y  ={\beta_0}+{\beta_1}x_{1i}+...+{\beta_p}x_{pi}+\epsilon _i
+\end{equation*}
+Polynomial regression model: The independent variables are all powers of a single variable
+\begin{equation*}
+y_i={\beta_0}+{\beta_1}x_{1i}+...+{\beta_p}x_{pi}+\epsilon _i
+\end{equation*}
+Quadratic model: polynomial regression of model of degree 2 and powers of several variables
+\begin{equation*}
+y_i={\beta_0}+{\beta_1}x_{1i}+\beta_2x_i^2+\beta_3 x_{1i} x_{2i} +\beta_3 x_{1i}^2+\beta_4 x_{2i}^2+\epsilon _i
+\end{equation*}
+\textbf{Interaction:} a variable that is the product of two other variables
+
+\subsubsection*{Least-squares}
+Least-square equation / fitted regression equation: 
+\begin{equation*}
+\hat y  =\hat{\beta_0}+\hat{\beta_1}x_1+...+\hat{\beta_p}x_p+\epsilon _i
+\end{equation*}
+$\hat{y}$ be the y coordinate of least square\\
+\\
+The \textbf{residuals} are: $$e_i= y_i-\hat{y_i}$$
+\subsubsection*{Sum of squares}
+\textbf{Regression sum of squares(SSR)}
+$$\sum_{i=1}^{n}(\hat{y_i}-\bar y)^2$$
+\textbf{Error sum of squares(SSE)}
+$$\sum_{i=1}^{n}(y_i-\hat{ y_i})^2$$
+\textbf{Total sum of squares(SST)}
+$$\sum_{i=1}^{n}({y_i}-\bar y)^2$$
+\textbf{Analysis of variance identity}
+$$SST=SSR+SSE$$\\
+The errors $\epsilon_1,...\epsilon_n$ are normally distributed.\\
+The errors all have mean 0.\\
+The errors all have the same variance $\sigma^2$\\
+The errors are random and independent.\\\\
+A model that is chosen because it appears to fit the data, in the absence of physical theory, is called an empirical model.\\\\
+\textbf{Coefficient of determination R }: measures the goodness of fit to the linear model
+$$R^2 = \frac{SSR}{SST}$$\\
+Distribution of $\beta_i$: $$\frac{\hat{\beta_i}-\beta_i}{s_{\hat{\beta_i}}}$$\\
+Estimated error variance $s^2$\\
+Coefficient of determination $R^2$\\
+Statistic F\\\\
+Adjust the \textbf{estimated standard deviation}
+\begin{equation*}
+    s^2 = \frac{\sum_{i=1}^{n}(y_i-\hat{ y_i})^2}{n-p-1}=\frac{SSE}{n-p-1}
+\end{equation*}
+
+\end{document}

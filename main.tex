@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{cancel}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand{\ms}{\mathscr}
+\newcommand{\mc}{\mathcal}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\xotn}{$X_1$,...,$X_n$}
+\newcommand{\potk}{$p_1$,...,$p_k$}
+
+\newcommand{\xbar}{\bar{X}}
+\newcommand{\sigmax}{\sigma_{\bar{x}}}
+\newcommand{\cic}{$100(1-\gamma)\%$}
+\newcommand{\cia}{$100(1-\alpha)\%$}
+\newcommand{\alphat}{\frac{\alpha}{2}}
+\newcommand{\phat}{\hat{p}}
+\newcommand{\hn}{$H_0 $ }
+\newcommand{\ha}{$H_1 $ }
+\newcommand{\xsim}{$X\sim$}
+\newcommand{\munsigma}{$\mu$ and $\sigma^2$}
+\graphicspath{{images/}}
+
+\usepackage{blindtext}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\title{
+    MSE238 Review Notes\\
+    \Large Engineering Statistics and Numerical Methods\\
+    \large University of Toronto\\
+    Prof. Kinnor Chattopadhyay}
+
+\author{Rachel}
+
+\date{April 2022}
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\subfile{Sections/Chapter1}
+\newpage
+\subfile{Sections/Chapter2}
+\newpage
+\subfile{Sections/Chapter3}
+\newpage
+\subfile{Sections/Chapter4}
+\newpage
+\subfile{Sections/Chapter5}
+\newpage
+\subfile{Sections/Chapter6}
+\newpage
+\subfile{Sections/Chapter7}
+\newpage
+\subfile{Sections/Chapter8}
+\newpage
+\subfile{Sections/Chapter10}
+
+\end{document}

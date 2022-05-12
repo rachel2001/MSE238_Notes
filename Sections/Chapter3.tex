@@ -1,0 +1,118 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Probability}
+
+\subsection{Probability and rules}
+\textbf{Definition}:
+\\
+An \textbf{experiment} is a process that results in an outcome that cannot be predicted in advance with certainty.\\
+\textbf{Sample space}: The set of all possible outcomes of an experiment.\\
+\textbf{Event}: A subset of a sample space. The empty set $\emptyset$ is an event, as is the entire sample space.\\
+The \textbf{union} of two events A and B (A or B): $A\cup B$\\
+\begin{equation*}
+    P(A\cup B)=P(A)+P(B)-P(A\cap B)
+\end{equation*}
+The \textbf{intersection} of A and B (A and B): $A\cap B$\\
+The \textbf{complement} of A (not A): $A^c$
+\begin{equation*}
+    P(A^c)=1-P(A), \forall A
+\end{equation*}
+The events A and B are said to be \textbf{mutually exclusive} if they have no outcomes in common.\\
+The \textbf{probability} is a quantitative measure of how likely the event is to occur.\\
+P(A) denotes the probability that event A occurs.\\
+$P(\emptyset) = 0$\\
+\\
+Let \textbf{S} be a sample space. Then $P(\textbf{S})=1$.  $\forall$A, $0\leq P(A)\leq 1$.\\
+If A and B are mutually exclusive events, then:
+\begin{equation*}
+    P(A\cup B) = P(A)+P(B)
+\end{equation*}
+
+\subsection{Conditional probability and Independence}
+\textbf{Definitions:}\\
+\textbf{Conditional probability}: given another event has occurred\\
+\textbf{unconditional probability}: the chance that a single outcome results among several possible outcomes\\
+\\
+Let A and B be events with $P(B) \neq 0$. The \textbf{conditional probability} of A given B is:
+\begin{equation*}
+    P(A|B)=\frac{P(A\cap B)}{P(B)}
+\end{equation*}
+
+\textbf{independent}: the occurrence of one does not affect the probability of occurrence of the other.\\
+If either P(A)=0 or P(B)=0, A and B are independent.\\
+\\
+Multiplication Rule:
+\begin{equation*}
+    P(A\cap B)=P(B)P(A|B), P(B)\neq 0
+\end{equation*}
+
+\begin{equation*}
+    P(A\cap B)=P(A)P(B|A), P(B)\neq 0
+\end{equation*}
+For independent events:
+\begin{equation*}
+    P(A\cap B)=P(A)P(B)
+\end{equation*}
+
+\subsection{Random variables: discrete and continuous}
+A \textbf{random variable} assigns a numerical value to each outcome in a sample space.\\
+A \textbf{continuous} variable is a variable whose value is obtained by measuring\\
+A \textbf{discrete} variable if its possible values form a discrete set.
+
+\subsection{Probability Mass Functions / Probability distribution (PMF)}
+The probability mass function of a discrete random variable X:
+\begin{equation*}
+p(x) = P(X=x)
+\end{equation*}
+
+\subsection{Cumulative Distribution Functions (CDF)}
+\begin{equation*}
+F(x) = P(X\leq x)=\int_{-\infty}^{x}f(t)dt
+\end{equation*}
+
+\subsection{Probability Density Functions (PDF)}
+A random sample is continuous if its probability are given by areas under a curve.
+The curve is called a PDF.
+\begin{equation*}
+\int_{-\infty}^{\infty}f(x)dx=1
+\end{equation*}
+
+\subsection{Means and variances for random variables}
+The mean of X (also called expected value E(X) denote by $\mu$ ):
+\begin{equation*}
+\mu _x = \sum_{x}{P(X=x)}=\int_{-\infty}^{\infty}xf(x)dx
+\end{equation*}
+Variance of X (denote by V(X) or $\sigma ^2$ ):
+\begin{align*}
+\sigma _x^2 
+&= \sum_{x}{(x-\mu _x)^2 P(X=x)}\\
+&=\sum_{x}{x^2 P(X=x)-\mu_x^2}\\
+&=\int_{-\infty}^{\infty}(x-\mu_x)^2f(x)dx\\
+&=\int_{-\infty}^{\infty}x^2f(x)dx-\mu_x^2\\
+\end{align*}
+Standard deviation: square root of variance
+\begin{equation*}
+\sigma _x = \sqrt{\sigma_x^2}
+\end{equation*}
+
+\subsection{Linear functions of random variables}
+If X and Y are independent random variables, and S and T are sets of numbers, then
+\begin{align*}
+    P(X\in S \cup Y\in T) &= P(X\in S)P(Y \in T)\\
+    \sigma _{X\pm Y}^2 &=\sigma _X^2 \pm \sigma _Y^2 
+\end{align*}
+\subsection{Mean and variance of a sample mean}
+Sample mean: $\bar{X}$.\\
+Sample variance: $\sigma_{\bar{x}}^2=\frac{\sigma ^2}{n}$
+\\
+If $X_1$,...$X_n$ is simple random sample, they may be treated as independent random variables all with same distribution.\\
+When $X_1$,...$X_n$ are independent random variables, all with the same distribution, then they are \textbf{independent
+and identically distributed (i.i.d)}\\
+If X is a random variable whose standard deviation is small, and if U is a function of X, then:
+\begin{equation*}
+    \sigma _U \approx \abs{\frac{dU}{dX}}\sigma _x
+\end{equation*}
+
+\end{document}

@@ -1,0 +1,100 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{Statistical Quality Control}
+
+\textbf{Common causes/ chance causes:} difficult or impossible to specify.\\
+If common causes are only causes of variation, the process is in  a state of statistical control/ in control.\\\\
+\textbf{Special causes/ assignable causes: }unacceptable variation, caused by special factor.\\
+If there are presence of one or more special causes, it is out of statistical control.\\\\
+\textbf{Rational subgroup:} A number of samples taken over a period of time.\\\\
+All the variability within the units in a rational subgroup should be due to common causes, non should be special causes.\\\\
+\textbf{Sampling method:}\\
+    1. Sample at regular time intervals, with all the items in each sample manufactured near the time the sampling is done.\\
+    2. Sample at regular time intervals, with the items in each sample drawn from all the units produced since the last sample was taken.\\\\
+Variable data: 3-8 unit, $>$20 samples\\
+Binary and count data: larger
+
+\subsection{Control Charts}
+
+$\bar X$ approximates the process mean $\mu$ during the time its sample was taken.\\
+R and s can be used to approximate the process standard deviation$\sigma$\\
+If the process is in control, $\bar X$, R,s will almost always be within \textbf{control limits}.\\
+
+\subsection{X–bar charts}
+
+\begin{align*}
+    3\sigma UpperLimit = \bar{\bar{X}}+A_2\bar{R} \\
+    CenterLine=\bar{\bar{X}}\\
+    3\sigma LowerLimit = \bar{\bar{X}} - A_2 \bar R
+\end{align*}
+
+\subsubsection*{X–bar and R charts}
+\textbf{Steps:}\\
+1. Choose rational subgroups.\\
+2. Compute the R chart.\\
+3. Determine the special causes for any out-of-control points.\\
+4. Recompute the R chart, omitting samples that resulted in out-of-control points.\\
+5. Once the R chart indicates a state of control, compute the $\bar X$ chart.\\
+6. If the $\bar X$ chart indicates that the process is not in control, identify and correct any special causes.\\
+7. Continue to monitor $\bar X$ and R.\\\\
+R chart can be used to access variation in the \textbf{sample range};\\
+R chart has a center line at $\bar R$ and upper and lower lines indicate the $3\sigma$ upper and lower control limits.
+\begin{align*}
+    3\sigma UpperLimit = D_4\bar R\\
+    CenterLine=\bar R\\
+    3\sigma LowerLimit = D_3\bar R
+\end{align*}
+
+\subsubsection*{X–bar and S charts}
+
+S chart can be used to assess variation in the \textbf{sample standard deviation}.\\
+S chart is an alternative to the R chart
+\begin{align*}
+    3\sigma UpperLimit = B_4\bar S\\
+    CenterLine=\bar S\\
+    3\sigma LowerLimit = B_3\bar S
+\end{align*}
+Attribute control chart: used for binary or count variables\\
+
+\subsection{p charts: for binary variables}
+The number of items in each sample is n.\\
+\begin{align*}
+    3\sigma UpperLimit = \bar p + 3\sqrt{\frac{\bar p (1-\bar p)}{n}}\\
+    CenterLine=\bar{p}\\
+    3\sigma LowerLimit = \bar p - 3\sqrt{\frac{\bar p (1-\bar p)}{n}}\\
+    \bar p = \sum_{i=1}^{k}\frac{\hat{p_i}}{k}
+\end{align*}
+The control limits valid when $n\bar p >10$
+
+\subsection{c charts: for count variables}
+C-charts show how the process, measured by the number of nonconformities per item or group of items, changes over time.
+The c chart is used when the quality measurement is a count of the number of defects, or flaws, in a given unit.\\
+Use of the c chart requires the number of defects follow a Poisson distribution.\\
+Assume k units are sampled, let $c_i$ denote the total number of defects in the $i^{th}$ unit.
+$\lambda$ denote the mean total number of flaws per unit.
+Then$c_i \thicksim Poisson(\lambda)$\\
+\begin{align*}
+    3\sigma UpperLimit = \bar c + 3\sqrt{\bar{c}}\\
+    CenterLine=\bar{c}\\
+    3\sigma LowerLimit = \bar c - 3\sqrt{\bar{c}}\\
+    \bar{c} = \sum_{i=1}^{k} \frac{c_i}{k}
+\end{align*}
+Valid when $\bar c > 10$.
+
+\subsection{Process Capability}
+\textbf{Definition: }The ability of a process to produce output that meets a given specification\\
+A process is in control if there are no special causes operating.\\
+The values of the quality characteristic vary without any trend or pattern, since common causes do not change over time.\\
+However, a process is possible to be in control and yet to be producing output that does not meet a given specification.\\
+If a quality characteristic from a process in a stats of control is normally distributed:
+\begin{align*}
+    \hat{\mu} = \bar{\bar X}
+\end{align*}
+To be fit for use, a quality characteristic must fall between a lower specification limit and an upper specification limit.\\
+They are not the control limits found on control charts.
+
+\subsection{6-sigma Quality}
+\textbf{Definition: }A process is said to have six sigma quality if the process capability index Cp has a value of 2.0 or greater.Equivalently, a process has six-sigma quality if the difference USL-LSL is at least 12 $\sigma$.\\
+It can withstand moderate shifts in process mean without significant deterioration in capability.
+\end{document}
